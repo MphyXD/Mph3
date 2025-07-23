@@ -154,7 +154,7 @@ except Exception as e:
 	os.system('clear')
 	print(f"\x1b[1;91m ╭───────────────────────────────────────────────────────\33[1;96m»")	
 	print(f" \x1b[1;91m╰─\33[1;96m▶\033[95m JARINGAN LU JELEK BANG COBA LAGI ");exit()
-prox=open('.prox.txt','r').read().splitlines()
+prox = open('proxy.txt','r').read().splitlines()
 #----------[USER AGENT ]---------#  
 for me in range(10000):
 	rr = random.randint
