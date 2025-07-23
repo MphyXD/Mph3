@@ -147,14 +147,23 @@ id,id2,loop,ok,cp,akun,oprek,lisensiku,tokenku,uid,lisensikuni,method,pwpluss,pw
 ugen2,ugen,dia,cokbrut,dump,memek,ualu,ualuh,lisensikuni,lisensiku,princp=[],[],[],[],[],[],[],[],[],[],[]
 sys.stdout.write('\x1b]2; AMBF | AraiiXyzz Multi Brute Facebook\x07')
 #------------------[ USER-AGENT PROXY]-------------------#
+#-----------[ USER-AGENT PROXY ]----------------#
 try:
-	prox = requests.get("https://api.proxyscrape.com/v2/#?request=displayproxies&protocol=socks5&timeout=10000&country=all&ssl=all&anonymity=all").text
-	open('proxy.txt','w').write(prox)
+    # Ambil data proxy dari API
+    prox = requests.get("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks5&timeout=10000&country=all&ssl=all&anonymity=all").text
+    
+    # Simpan ke file proxy.txt
+    with open('proxy.txt', 'w') as f:
+        f.write(prox)
+
+    # Baca kembali dari proxy.txt
+    with open('proxy.txt', 'r') as f:
+        prox = f.read().splitlines()
+
 except Exception as e:
-	os.system('clear')
-	print(f"\x1b[1;91m ╭───────────────────────────────────────────────────────\33[1;96m»")	
-	print(f" \x1b[1;91m╰─\33[1;96m▶\033[95m JARINGAN LU JELEK BANG COBA LAGI ");exit()
-prox = open('proxy.txt','r').read().splitlines()
+    os.system('clear')
+    print(f"\x1b[1;91m")
+    print(f"\x1b[1;91m └──\x1b[1;96m► \033[95m JARINGAN LU JELEK BANG COBA LAGI ");exit()
 #----------[USER AGENT ]---------#  
 for me in range(10000):
 	rr = random.randint
